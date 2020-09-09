@@ -4,16 +4,26 @@ import styled from 'styled-components';
 import '../style/resets.scss';
 import { Header, Footer } from '@components';
 
-const Main = styled.main`
-  display: grid;
-  grid-gap: 20px;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-  margin: 52px 100px;
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 `;
 
-export const Layout = ({ children }: { children: React.ReactNode }) => {
+const Main = styled.main`
+  align-items: center;
+  display: flex;
+  flex: 1 0 auto;
+  flex-direction: column;
+  margin: 0 auto;
+  min-height: calc(100vh - 134px - 50px);
+  padding: 52px 12px;
+`;
+
+export const LayoutDay = ({ children }: { children: React.ReactNode }) => {
   const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
+    query DayTitleQuery {
       site {
         siteMetadata {
           title
@@ -24,11 +34,11 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <>
-      <div>
+      <Container>
         <Header siteTitle={data.site.siteMetadata.title} />
         <Main>{children}</Main>
         <Footer />
-      </div>
+      </Container>
     </>
   );
 };

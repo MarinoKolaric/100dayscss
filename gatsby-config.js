@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Marino Kolarić`,
+    title: `100 Days CSS`,
     description: ``,
-    author: `@Marino`,
+    author: `Marino`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

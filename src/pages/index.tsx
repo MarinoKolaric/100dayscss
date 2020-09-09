@@ -1,10 +1,17 @@
 import React from 'react';
-import { Layout, SEO } from '@components';
+import days, { Layout, SEO } from '@components';
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-  </Layout>
-);
+const IndexPage = () => {
+  const dayElements = days.map((Day, i) => (
+    <Day key={i} />
+  ));
+
+  return (
+    <Layout>
+      <SEO title="Home" />
+      {dayElements}
+    </Layout>
+  );
+};
 
 export default IndexPage;
