@@ -6,6 +6,8 @@ export const color = {
   gray3: '#757575',
   gray4: '#A9A9A9',
 
+  day3Background: '#E56262',
+
   day5Background: '#ca7c4e',
   day5Color: '#786450',
   day5StatsBackground: '#f5e8df',
@@ -13,6 +15,7 @@ export const color = {
 };
 
 export const fontSize = {
+  xxs: '11rem',
   xs: '14rem',
   sm: '16rem',
   md: '18rem',
@@ -32,6 +35,3 @@ export const mediaQueries = (key: keyof typeof breakpoints) => {
     `@media (min-width: ${breakpoints[key]}px) { ${style} }`;
 };
 
-export const borderRadius = '12px';
-
-export const boxShadowUnder = '0px 10px 8px -12px rgba(0,0,0,0.2);';
