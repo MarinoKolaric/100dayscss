@@ -84,7 +84,7 @@ const ProfileName = styled.h3`
   text-align: center;
 `;
 const ProfileJobTitle = styled.p`
-  font-size: ${theme.fontSize.xs};
+  font-size: ${theme.fontSize.xxs};
   padding-bottom: 28px;
   text-align: center;
 `;
