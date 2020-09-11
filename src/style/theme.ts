@@ -5,10 +5,11 @@ export const color = {
   gray2: '#4F4F4F',
   gray3: '#757575',
   gray4: '#A9A9A9',
-  blue: '#2072e6',
 
-  darkenBlue: '#155abc',
-  darkenWhite: '#e5e5e5',
+  day5Background: '#ca7c4e',
+  day5Color: '#786450',
+  day5StatsBackground: '#f5e8df',
+  day5StatsBackgroundHover: '#E1CFC2',
 };
 
 export const fontSize = {

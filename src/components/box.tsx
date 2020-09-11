@@ -1,16 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
+import { theme } from '@style';
 
-const Layout = styled.div`
-  align-items: center;
-  background-color: #3faf82;
-  display: flex;
-  flex-direction: column;
+const Container = styled.div`
+  background-color: #222;
   height: 400px;
-  justify-content: center;
   position: relative;
-  width: 400px;
+  width: 100%;
+
+  ${theme.mediaQueries('mobileLarge')`
+    width: 400px;
+  `}
 `;
 
 const DayLink = styled(Link)`
@@ -19,7 +20,7 @@ const DayLink = styled(Link)`
   top: -32px;
 `;
 
-export const Container = ({
+export const Box = ({
   title,
   link,
   component,
@@ -31,11 +32,11 @@ export const Container = ({
   children: React.ReactNode;
 }) => {
   return (
-    <Layout>
+    <Container>
       <DayLink to={`/${link}`} state={{ component }}>
         {title}
       </DayLink>
       {children}
-    </Layout>
+    </Container>
   );
 };

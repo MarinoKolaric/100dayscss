@@ -1,4 +1,4 @@
-export { Container } from './container';
+export { Box } from './box';
 export { Layout } from './layout';
 export { LayoutDay } from './layoutDay';
 export { Header } from './header';

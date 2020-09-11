@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled, { keyframes } from 'styled-components';
-import { Container } from '@components';
-
+import { Box } from '@components';
+// Date : 8.9.2020
 const animateFirstLineRev = keyframes`
   0% {
     transform: translate3d(0, 22px, 0) rotate(45deg);
@@ -79,6 +79,16 @@ const animateLastLine = keyframes`
   }
 `;
 
+const Container = styled.div`
+  align-items: center;
+  background-color: #3faf82;
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  justify-content: center;
+  width: 100%;
+`;
+
 const HamburgerMenu = styled.div`
   cursor: pointer;
 `;
@@ -97,7 +107,7 @@ const Line = styled.div<LineProps>`
 
   :nth-of-type(2) {
     animation: ${animateMidLineRev} 0.7s ease-in-out;
-    margin: 12px 0;
+    margin: 14px 0;
   }
 
   :nth-of-type(3) {
@@ -111,7 +121,7 @@ const Line = styled.div<LineProps>`
 
     :nth-of-type(2) {
       animation: ${animateMidLine} 0.7s ease-in-out forwards;
-      margin: 12px 0;
+      margin: 14px 0;
     }
 
     :nth-of-type(3) {
@@ -130,17 +140,32 @@ export const Day1 = () => {
   const [noAnimation, setNoAnimation] = useState(true);
 
   return (
-    <Container title="Day 1" link="day1" component="Day1">
-      <HamburgerMenu
-        onClick={() => {
-          setIsActive(!isActive);
-          setNoAnimation(false);
-        }}
-      >
-        <Line className={isActive ? 'active' : ''} noAnimation={noAnimation} />
-        <Line className={isActive ? 'active' : ''} noAnimation={noAnimation} />
-        <Line className={isActive ? 'active' : ''} noAnimation={noAnimation} />
-      </HamburgerMenu>
-    </Container>
+    <Box
+      title="Day 1"
+      link="day1"
+      component="Day1"
+    >
+      <Container>
+        <HamburgerMenu
+          onClick={() => {
+            setIsActive(!isActive);
+            setNoAnimation(false);
+          }}
+        >
+          <Line
+            className={isActive ? 'active' : ''}
+            noAnimation={noAnimation}
+          />
+          <Line
+            className={isActive ? 'active' : ''}
+            noAnimation={noAnimation}
+          />
+          <Line
+            className={isActive ? 'active' : ''}
+            noAnimation={noAnimation}
+          />
+        </HamburgerMenu>
+      </Container>
+    </Box>
   );
 };

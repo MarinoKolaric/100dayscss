@@ -2,13 +2,24 @@ import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
 import '../style/resets.scss';
+import { theme } from '@style';
 import { Header, Footer } from '@components';
 
 const Main = styled.main`
   display: grid;
-  grid-gap: 20px;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-  margin: 52px 100px;
+  grid-gap: 50px;
+  grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+  justify-items: center;
+  margin: 52px auto;
+
+  ${theme.mediaQueries('mobileLarge')(`
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  `)}
+  ${theme.mediaQueries('laptop')(`
+    grid-gap: 20px;
+    justify-items: start;
+    margin: 52px 100px;
+  `)}
 `;
 
 export const Layout = ({ children }: { children: React.ReactNode }) => {

@@ -5,19 +5,18 @@ import days, { LayoutDay, SEO, GoBack } from '@components';
 type TLocationState = { component: string };
 type IndexPageProps = PageProps<{}, {}, TLocationState>;
 
-const Day2Page = (props: IndexPageProps) => {
+const Day5Page = (props: IndexPageProps) => {
   const { state } = props.location;
-  console.log('stateName', state.component);
 
   const DayElement = days.filter(Day => Day.name === state.component)[0];
 
   return (
     <LayoutDay>
-      <SEO title="Home" />
+      <SEO title={DayElement.name} />
       {DayElement ? <DayElement /> : <h1>NoElement</h1>}
       <GoBack />
     </LayoutDay>
   );
 };
 
-export default Day2Page;
+export default Day5Page;
