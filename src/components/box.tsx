@@ -17,7 +17,7 @@ const Container = styled.div`
 const DayLink = styled(Link)`
   left: 0;
   position: absolute;
-  top: -32px;
+  top: -24px;
 `;
 
 export const Box = ({

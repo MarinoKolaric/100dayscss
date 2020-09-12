@@ -16,7 +16,7 @@ const Main = styled.main`
     grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   `)}
   ${theme.mediaQueries('laptop')(`
-    grid-gap: 20px;
+    grid-gap: 32px;
     justify-items: start;
     margin: 52px 100px;
   `)}
