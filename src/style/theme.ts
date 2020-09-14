@@ -8,6 +8,12 @@ export const color = {
 
   day3Background: '#E56262',
 
+  day4Background: '#42A7A1',
+  day4Yellow: '#F1BA64',
+  day4Red: '#FA7373',
+  day4Blue: '#7BA2FF',
+  day4HorizontalLine: '#F2F2F2',
+
   day5Background: '#ca7c4e',
   day5Color: '#786450',
   day5StatsBackground: '#f5e8df',
@@ -35,3 +41,4 @@ export const mediaQueries = (key: keyof typeof breakpoints) => {
     `@media (min-width: ${breakpoints[key]}px) { ${style} }`;
 };
 
+export const boxShadow = 'box-shadow: 10px 10px 15px 0 rgba(0, 0, 0, 0.3);';
