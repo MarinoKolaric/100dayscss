@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
 import '../style/resets.scss';
 import { Header, Footer } from '@components';
-
+import { theme } from '@style';
 
 const Container = styled.div`
   display: flex;
@@ -19,6 +19,11 @@ const Main = styled.main`
   margin: 0 auto;
   min-height: calc(100vh - 134px - 50px);
   padding: 52px 12px;
+  width: 100%;
+
+  ${theme.mediaQueries('mobileLarge')(`
+    width: 400px;
+  `)}
 `;
 
 export const LayoutDay = ({ children }: { children: React.ReactNode }) => {
