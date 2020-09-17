@@ -6,6 +6,14 @@ export const color = {
   gray3: '#757575',
   gray4: '#A9A9A9',
 
+  day2Background: '#272C34',
+  day2Sky: '#7DDFFC',
+  day2Sun: '#FFEF00',
+  day2SunRed: '#F57209',
+  day2PyramidLeft: '#F4F4F4',
+  day2PyramidRight: '#DDDADA',
+  day2Ground: '#F0DE75',
+
   day3Background: '#E56262',
 
   day4Background: '#42A7A1',
