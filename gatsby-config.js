@@ -45,6 +45,17 @@ module.exports = {
         extensions: ['js', 'tsx', 'ts'],
       },
     },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `Open Sans\:300,600`,
+          `Montserrat\:500,600`,
+        ],
+        display: 'swap'
+      }
+    }
+
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
