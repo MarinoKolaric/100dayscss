@@ -214,20 +214,20 @@ export const Day4 = () => {
                   color={theme.color.day4Blue}
                 />
               </Svg>
-              {polylinePointsRed.map((el: Array<number>) => (
-                <Dot x={el[0] - 3} y={el[1] - 3} color={theme.color.day4Red}>
+              {polylinePointsRed.map((el: Array<number>, i) => (
+                <Dot key={i} x={el[0] - 3} y={el[1] - 3} color={theme.color.day4Red}>
                   <DotTooltip color={theme.color.day4Red}>{el[1]}</DotTooltip>
                 </Dot>
               ))}
-              {polylinePointsBlue.map((el: Array<number>) => (
-                <Dot x={el[0] - 3} y={el[1] - 3} color={theme.color.day4Blue}>
+              {polylinePointsBlue.map((el: Array<number>, i) => (
+                <Dot key={i} x={el[0] - 3} y={el[1] - 3} color={theme.color.day4Blue}>
                   <DotTooltip color={theme.color.day4Blue}>{el[1]}</DotTooltip>
                 </Dot>
               ))}
             </Statistics>
             <Days>
-              {daysInWeek.map(day => (
-                <p>{day}</p>
+              {daysInWeek.map((day, i) => (
+                <p key={i}>{day}</p>
               ))}
             </Days>
           </Body>
