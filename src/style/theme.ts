@@ -26,6 +26,13 @@ export const color = {
   day5Color: '#786450',
   day5StatsBackground: '#f5e8df',
   day5StatsBackgroundHover: '#E1CFC2',
+
+  day6Background: '#264057',
+  day6Blue: '#5F98CD',
+  day6BlueDark: '#385269',
+  day6Text: '#666666',
+  day6TextDark: '#93B2CD',
+  day6Line: '#EBEBEB',
 };
 
 export const fontSize = {
