@@ -41,7 +41,7 @@ const Header = styled.div`
 export const Day6 = () => {
 
   return (
-    <Box title="Day 6" link="day6" component="Day6">
+    <Box title="Day 6" link="day6" componentName="Day6">
       <Container>
         <Frame>
 

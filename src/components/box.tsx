@@ -23,17 +23,17 @@ const DayLink = styled(Link)`
 export const Box = ({
   title,
   link,
-  component,
+  componentName,
   children,
 }: {
   title: string;
   link: string;
-  component: string;
+  componentName: string;
   children: React.ReactNode;
 }) => {
   return (
     <Container>
-      <DayLink to={`/${link}`} state={{ component }}>
+      <DayLink to={`/days/${link}`} state={{ componentName }}>
         {title}
       </DayLink>
       {children}

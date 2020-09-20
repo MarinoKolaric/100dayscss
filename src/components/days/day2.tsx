@@ -209,7 +209,7 @@ const Ground = styled.div`
 
 export const Day2 = () => {
   return (
-    <Box title="Day 2" link="day2" component="Day2">
+    <Box title="Day 2" link="day2" componentName="Day2">
       <Container>
         <Frame>
           <Sky />

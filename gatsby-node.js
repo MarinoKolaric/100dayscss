@@ -1,7 +1,28 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/node-apis/
- */
+exports.createPages = async ({ actions, graphql, reporter }) => {
+  const result = await graphql(`
+  query {
+    allFile(filter: { sourceInstanceName: { eq: "days" } }) {
+      edges {
+        node {
+          id
+          name
+        }
+      }
+    }
+  }
+  `)
 
-// You can delete this file if you're not using it
+  if (result.errors) {
+    reporter.panic('Error loading days!', reporter.errors)
+  }
+
+  result.data.allFile.edges.forEach(day => {
+    actions.createPage({
+      path: `/days/${day.node.name}`,
+      component: require.resolve('./src/templates/day.js'),
+      context: {
+        dayId: day.node.id,
+      },
+    })
+  })
+}

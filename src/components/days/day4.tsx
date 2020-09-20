@@ -182,7 +182,7 @@ export const Day4 = () => {
   ];
 
   return (
-    <Box title="Day 4" link="day4" component="Day4">
+    <Box title="Day 4" link="day4" componentName="Day4">
       <Container>
         <Card>
           <Header>

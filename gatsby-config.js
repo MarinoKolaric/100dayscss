@@ -13,6 +13,14 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    { 
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `days`,
+        path: `${__dirname}/src/components/days`,
+        ignore: [`index.ts`],
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-styled-components`,
@@ -54,7 +62,15 @@ module.exports = {
         ],
         display: 'swap'
       }
-    }
+    },
+    {
+      resolve: 'gatsby-source-graphql',
+      options: {
+        url: 'https://rickandmortyapi.com/graphql/',
+        typeName: 'RickAndMorty',
+        fieldName: 'rickandmorty',
+      },
+    },
 
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline

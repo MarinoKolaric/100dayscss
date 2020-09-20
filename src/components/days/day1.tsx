@@ -143,7 +143,7 @@ export const Day1 = () => {
     <Box
       title="Day 1"
       link="day1"
-      component="Day1"
+      componentName="Day1"
     >
       <Container>
         <HamburgerMenu

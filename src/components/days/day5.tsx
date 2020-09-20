@@ -149,7 +149,7 @@ export const Day5 = () => {
   `);
 
   return (
-    <Box title="Day 5" link="day5" component="Day5">
+    <Box title="Day 5" link="day5" componentName="Day5">
       <Container>
         <Frame>
           <Profile>

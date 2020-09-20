@@ -86,7 +86,7 @@ const Circle = styled.div`
 
 export const Day3 = () => {
   return (
-    <Box title="Day 3" link="day3" component="Day3">
+    <Box title="Day 3" link="day3" componentName="Day3">
       <Container>
         <Circle className="circle-l" />
         <Circle className="circle-m" />
