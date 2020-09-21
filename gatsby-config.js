@@ -13,7 +13,7 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    { 
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `days`,
@@ -56,12 +56,9 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [
-          `Open Sans\:300,600`,
-          `Montserrat\:500,600`,
-        ],
-        display: 'swap'
-      }
+        fonts: [`Open Sans\:300,600`, `Montserrat\:500,600`],
+        display: 'swap',
+      },
     },
     {
       resolve: 'gatsby-source-graphql',
