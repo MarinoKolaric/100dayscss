@@ -1,6 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import days, { LayoutDay, GoBack } from '@components';
+import { render } from 'react-dom';
 
 export const query = graphql`
   query($dayId: String) {
@@ -11,18 +12,14 @@ export const query = graphql`
 `;
 
 const Day = ({ data }) => {
-  // const t = days.filter(Day => Day.name.toLowerCase() === data.file.name)[0];
-  // const t2 = days.filter(Day => Day.name.toLowerCase() === data.file.name);
-  // console.log('t', t);
-  // console.log('t2', t2);
 
   return (
     <LayoutDay>
-      {days
-        .filter(day => day.name.toLowerCase() === data.file.name)
-        .map(D => (
-          <D />
-        ))}
+      {days.map(Day => {
+        if (Day().props.link === data.file.name) {
+          return <Day />;
+        }
+      })}
       <GoBack />
     </LayoutDay>
   );
