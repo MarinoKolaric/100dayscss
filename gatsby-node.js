@@ -1,19 +1,19 @@
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const result = await graphql(`
-  query {
-    allFile(filter: { sourceInstanceName: { eq: "days" } }) {
-      edges {
-        node {
-          id
-          name
+    query {
+      allFile(filter: { sourceInstanceName: { eq: "days" } }) {
+        edges {
+          node {
+            id
+            name
+          }
         }
       }
     }
-  }
-  `)
+  `);
 
   if (result.errors) {
-    reporter.panic('Error loading days!', reporter.errors)
+    reporter.panic('Error loading days!', reporter.errors);
   }
 
   result.data.allFile.edges.forEach(day => {
@@ -23,6 +23,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       context: {
         dayId: day.node.id,
       },
-    })
-  })
-}
+    });
+  });
+};
