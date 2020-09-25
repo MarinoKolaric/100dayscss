@@ -260,8 +260,8 @@ export const Day6 = () => {
       <Container>
         <Frame>
           <Menu openMenu={toggleMenu}>
-            {menuItems.map(item => (
-              <MenuItem>
+            {menuItems.map((item, i) => (
+              <MenuItem key={i}>
                 <item.icon />
                 <p>{item.text}</p>
               </MenuItem>
