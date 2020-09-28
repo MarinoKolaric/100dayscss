@@ -33,6 +33,14 @@ export const color = {
   day6Text: '#666666',
   day6TextDark: '#93B2CD',
   day6Line: '#EBEBEB',
+
+  day7Background: '#1A2238',
+  day7Text: '#394568',
+  day7HillBg: '#26314F',
+  day7HillFg: '#303C5D',
+  day7Moon: '#F6EDBD',
+  day7MoonCrater: '#ECE1A8',
+  day7Drop: '#7FC1F9',
 };
 
 export const fontSize = {
