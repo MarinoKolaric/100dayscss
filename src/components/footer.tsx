@@ -10,7 +10,7 @@ export const Footer = () => {
   return (
     <FooterContainer>
       © {new Date().getFullYear()}, project
-      <a href="https://100dayscss.com/">100dayscss</a>
+      <p>100dayscss</p>
     </FooterContainer>
   );
 };
