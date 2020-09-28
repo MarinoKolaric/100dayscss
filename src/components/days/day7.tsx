@@ -298,8 +298,14 @@ const Info = styled.div`
   align-items: center;
   background-color: ${theme.color.main};
   display: flex;
+  font-size: ${theme.fontSize.xs};
   height: 92px;
-  padding: 0 16px;
+  padding: 0 12px;
+
+  ${theme.mediaQueries('mobileLarge')(`
+    font-size: ${theme.fontSize.sm};
+    padding: 0 16px;
+  `)}
 `;
 
 const Temp = styled.h1`
