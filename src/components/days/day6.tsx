@@ -56,7 +56,6 @@ const menuItems = [
 
 const Container = styled.div`
   align-items: center;
-  ${theme.boxShadow}
   background: ${theme.color.day6Background};
   color: ${theme.color.day6Text};
   display: flex;
@@ -68,7 +67,7 @@ const Container = styled.div`
 `;
 
 const Frame = styled.div`
-  box-shadow: ${theme.boxShadow};
+  ${theme.boxShadow};
   display: flex;
   flex-direction: column;
   height: 300px;
@@ -140,7 +139,7 @@ const Notification = styled.div`
 
   &:hover > div > p > div > div {
     border: 4px solid ${theme.color.day6Blue};
-    transition: .2s all;
+    transition: 0.2s all;
   }
 `;
 
@@ -156,7 +155,7 @@ const MessageBody = styled.div`
   padding: 16px 12px;
 `;
 
-const TimeLabel = styled.p`
+const TimeLabel = styled.div`
   font-size: ${theme.fontSize.xxs};
   margin-bottom: 2px;
   position: relative;
@@ -275,8 +274,8 @@ export const Day6 = () => {
               <FaSearch onClick={() => setToggleSearch(!toggleSearch)} />
             </Header>
             <Body>
-              {data.map(notification => (
-                <Notification>
+              {data.map((notification, i) => (
+                <Notification key={i}>
                   <VerticalLine />
                   <MessageBody>
                     <TimeLabel>
