@@ -41,6 +41,11 @@ export const color = {
   day7Moon: '#F6EDBD',
   day7MoonCrater: '#ECE1A8',
   day7Drop: '#7FC1F9',
+
+  day8Background: '#E9EDEF',
+  day8Text: '#5E5E5E',
+  day8Blue: '#7DD0ED',
+  day8BlueDark: '#27A6D2',
 };
 
 export const fontSize = {
