@@ -13,9 +13,9 @@ export const query = graphql`
 const Day = ({ data }) => {
   return (
     <LayoutDay>
-      {days.map(Day => {
+      {days.map((Day, i) => {
         if (Day().props.link === data.file.name) {
-          return <Day />;
+          return <Day key={i} />;
         }
         return null;
       })}
