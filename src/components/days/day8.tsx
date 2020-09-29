@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { theme } from '@style';
 import { Box } from '@components';
-// Date : 8.9.2020
+// Date : 29.9.2020
 
 interface IPlan {
   title: string;
