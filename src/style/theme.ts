@@ -71,3 +71,4 @@ export const mediaQueries = (key: keyof typeof breakpoints) => {
 };
 
 export const boxShadow = 'box-shadow: 10px 10px 15px 0 rgba(0, 0, 0, 0.3);';
+export const boxShadowSmall = 'box-shadow: 2px 2px 4px 0 rgba(0,0,0,0.1);';
