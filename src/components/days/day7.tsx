@@ -271,7 +271,6 @@ const drop = keyframes`
 
 const Container = styled.div`
   align-items: center;
-  ${theme.boxShadow}
   background: ${theme.color.day7Background};
   color: ${theme.color.day7Text};
   font-family: 'Open Sans';
