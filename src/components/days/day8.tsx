@@ -48,7 +48,11 @@ const Container = styled.div`
 const PlanFlex = styled.div`
   display: flex;
   justify-content: space-between;
-  padding: 24px;
+  padding: 20px;
+
+  ${theme.mediaQueries('mobileLarge')(`
+    padding: 24px;
+  `)}
 `;
 
 const PlanHeader = styled.div`
@@ -84,7 +88,11 @@ const Plan = styled.div`
   flex-direction: column;
   overflow: hidden;
   transition: all 0.3s ease-in-out;
-  width: 112px;
+  width: 96px;
+
+  ${theme.mediaQueries('mobileLarge')(`
+    width: 112px;
+  `)}
 
   &:hover {
     transform: scale(1.09);
