@@ -46,6 +46,17 @@ export const color = {
   day8Text: '#5E5E5E',
   day8Blue: '#7DD0ED',
   day8BlueDark: '#27A6D2',
+
+  day9Background: '#514878',
+  day9LabelBackground: '#39315a',
+  day9BulbBackground: '#4a426b',
+  day9Bulb: '#635a84',
+
+  day10Background: '#28404E',
+  day10Background2: '#1c2e38',
+  day10Circle: '#1B2A33',
+  day10Green: '#27E1AE',
+  day10Blue: '#5CE1EC',
 };
 
 export const fontSize = {
