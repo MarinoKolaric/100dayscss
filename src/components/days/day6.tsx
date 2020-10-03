@@ -67,7 +67,7 @@ const Container = styled.div`
 `;
 
 const Frame = styled.div`
-  ${theme.boxShadow};
+
   display: flex;
   flex-direction: column;
   height: 300px;
@@ -76,6 +76,7 @@ const Frame = styled.div`
 `;
 
 const Main = styled.div<{ openMenu: boolean }>`
+  ${theme.boxShadow};
   border-radius: 4px;
   overflow: hidden;
   transform: ${props => props.openMenu && 'translateX(120px) '};
