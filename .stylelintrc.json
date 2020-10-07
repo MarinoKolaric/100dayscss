@@ -5,7 +5,17 @@
     "number-leading-zero": null,
     "plugin/8-point-grid": {
       "base": 4,
-      "allowlist": ["1px", "2px", "3px", "5px", "6px", "-2px", "-6px"]
+      "allowlist": ["1px", "2px", "3px", "5px", "6px", "-2px", "-6px"],
+      "ignorelist": [
+        "width",
+        "height",
+        "padding",
+        "margin",
+        "top",
+        "bottom",
+        "left",
+        "right"
+      ]
     }
   }
 }
