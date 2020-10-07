@@ -57,6 +57,13 @@ export const color = {
   day10Circle: '#1B2A33',
   day10Green: '#27E1AE',
   day10Blue: '#5CE1EC',
+
+  day11Background: '#7b9280',
+  day11Border: '#010102',
+  day11Face: '#73989e',
+  day11FaceLighter: '#CAE8ED',
+  day11TearDrop: '#0a7ed7',
+  day11TearDropLighter: '#6eb0d9',
 };
 
 export const fontSize = {
