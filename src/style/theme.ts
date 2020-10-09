@@ -64,6 +64,8 @@ export const color = {
   day11FaceLighter: '#CAE8ED',
   day11TearDrop: '#0a7ed7',
   day11TearDropLighter: '#6eb0d9',
+
+  day12Background: '#4a627a',
 };
 
 export const fontSize = {
