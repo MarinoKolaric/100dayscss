@@ -2,7 +2,7 @@ import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
 import '../style/resets.scss';
-import { Header, Footer } from '@components';
+import { Header } from '@components';
 import { theme } from '@style';
 
 const Container = styled.div`
@@ -42,7 +42,6 @@ export const LayoutDay = ({ children }: { children: React.ReactNode }) => {
       <Container>
         <Header siteTitle={data.site.siteMetadata.title} />
         <Main>{children}</Main>
-        <Footer />
       </Container>
     </>
   );
