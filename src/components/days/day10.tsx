@@ -194,14 +194,14 @@ export const Day10 = () => {
             <Svg>
               <CircleComponent
                 r="50"
-                dailyGoal={steps.dailyGoal}
-                current={steps.current}
+                dailyGoal={kms.dailyGoal}
+                current={kms.current}
                 isEmpty
               />
               <CircleComponent
                 r="50"
-                dailyGoal={steps.dailyGoal}
-                current={steps.current}
+                dailyGoal={kms.dailyGoal}
+                current={kms.current}
               />
             </Svg>
           </SecondaryCircleWrapper>
