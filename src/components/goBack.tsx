@@ -8,13 +8,13 @@ const LinkWrapper = styled(Link)`
   align-items: center;
   display: flex;
   font-size: ${theme.fontSize.lg};
-  padding-top: 24px;
+  padding-top: 16px;
 `;
 
 export const GoBack = () => {
   return (
     <LinkWrapper to="/">
-      <MdArrowBack /> <p>Return</p>
+      <MdArrowBack /> <p>Go back</p>
     </LinkWrapper>
   );
 };
