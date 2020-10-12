@@ -19,7 +19,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   result.data.allFile.edges.forEach(day => {
     actions.createPage({
       path: `/days/${day.node.name}`,
-      component: require.resolve('./src/templates/day.js'),
+      component: require.resolve('./src/templates/day.tsx'),
       context: {
         dayId: day.node.id,
       },
