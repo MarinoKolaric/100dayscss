@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled, { keyframes } from 'styled-components';
+import { theme } from '@style';
 import { Box } from '@components';
 // Date : 8.9.2020
 const animateFirstLineRev = keyframes`
@@ -81,7 +82,7 @@ const animateLastLine = keyframes`
 
 const Container = styled.div`
   align-items: center;
-  background-color: #3faf82;
+  background-color: ${theme.color.day1Background};
   display: flex;
   flex-direction: column;
   height: 400px;
@@ -95,7 +96,7 @@ const HamburgerMenu = styled.div`
 
 const Line = styled.div<LineProps>`
   animation: ${props => props.noAnimation && 'none !important'};
-  background-color: #fff;
+  background-color: ${theme.color.main};
   border-radius: 4px;
   height: 8px;
   transition: background-color 0.2s ease-in-out;
@@ -140,11 +141,7 @@ export const Day1 = () => {
   const [noAnimation, setNoAnimation] = useState(true);
 
   return (
-    <Box
-      title="Day 1"
-      link="day1"
-      componentName="Day1"
-    >
+    <Box title="Day 1" link="day1" componentName="Day1">
       <Container>
         <HamburgerMenu
           onClick={() => {

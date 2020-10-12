@@ -6,6 +6,8 @@ export const color = {
   gray3: '#757575',
   gray4: '#A9A9A9',
 
+  day1Background: '#3faf82',
+
   day2Background: '#272C34',
   day2Sky: '#7DDFFC',
   day2Sun: '#FFEF00',
@@ -79,6 +81,7 @@ export const fontSize = {
 
 export const breakpoints = {
   mobile: 320,
+  mobileMedium: 400,
   mobileLarge: 540,
   tablet: 768,
   laptop: 1200,
