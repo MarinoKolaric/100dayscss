@@ -8,9 +8,10 @@ import { Header, Footer } from '@components';
 const Main = styled.main`
   display: grid;
   grid-gap: 50px;
-  grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(1fr, 400px));
   justify-items: center;
-  margin: 52px auto;
+  margin: 50px 12px;
+
 
   ${theme.mediaQueries('mobileLarge')(`
     grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));

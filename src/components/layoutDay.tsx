@@ -21,7 +21,7 @@ const Main = styled.main`
   padding: 52px 12px;
   width: 100%;
 
-  ${theme.mediaQueries('mobileLarge')(`
+  ${theme.mediaQueries('mobileMedium')(`
     width: 400px;
   `)}
 `;
