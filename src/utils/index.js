@@ -1,0 +1,2 @@
+export { getColorStrings } from './getColorStrings';
+

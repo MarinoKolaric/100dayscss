@@ -49,6 +49,7 @@ module.exports = {
           '@state': 'src/state',
           '@style': 'src/style',
           '@types': 'src/types',
+          '@utils': 'src/utils',
         },
         extensions: ['js', 'tsx', 'ts'],
       },
