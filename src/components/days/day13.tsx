@@ -119,7 +119,7 @@ const Card = styled.div`
 `;
 
 const CardHeader = styled(Img)<GatsbyImageProps>`
-  height: 60px;
+  height: 80px;
   width: 100%;
 `;
 
