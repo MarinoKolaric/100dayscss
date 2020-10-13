@@ -68,6 +68,15 @@ export const color = {
   day11TearDropLighter: '#6eb0d9',
 
   day12Background: '#4a627a',
+
+  day13Background: '#1f8de4',
+  day13Yellow: '#ffcc30',
+  day13Green: '#008C45',
+  day13White: '#F4F5F0',
+  day13Red: '#CD212A',
+  day13Blue: '#2196f3',
+  day13Divider: '#91CCFB',
+  day13Text: '#484848',
 };
 
 export const fontSize = {
