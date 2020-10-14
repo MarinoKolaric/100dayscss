@@ -14,7 +14,8 @@
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
     "type-check": "tsc --noEmit",
-    "stylelint": "npx stylelint --fix \"**/*.scss\" \"**/*.tsx\""
+    "stylelint": "npx stylelint --fix \"**/*.scss\" \"**/*.tsx\"",
+    "publish": "git push && git checkout master && git merge develop && git push && git checkout develop"
   },
   "repository": {
     "type": "git",
