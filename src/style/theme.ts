@@ -77,6 +77,12 @@ export const color = {
   day13Blue: '#2196f3',
   day13Divider: '#91CCFB',
   day13Text: '#484848',
+
+  day14Background: '#E0F0E5',
+  day14Leaf: '#E84624',
+  day14LeafDarker: '#ba381d',
+  day14Tree: '#E8C87E',
+  day14Ground: '#B9D6C2',
 };
 
 export const fontSize = {
