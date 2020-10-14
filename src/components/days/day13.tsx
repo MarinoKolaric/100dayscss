@@ -204,29 +204,29 @@ export const Day13 = () => {
           <MapPin onClick={() => setIsActive(true)} />
         </MapPinWrapper>
         <Shadow className={isActive ? 'inactive' : ''} />
-      </Container>
 
-      <Card
-        onClick={() => setIsActive(false)}
-        className={isActive ? 'active' : ''}
-      >
-        <CardHeader fluid={data.day13Vespa.childImageSharp.fluid} />
-        <CardBody>
-          <span>Vespa Scootershop</span>
-          <span>Via Sedile di Porto 70</span>
-          <span>35142 Padova</span>
-        </CardBody>
-        <CardFooter>
-          <FooterLink href="#">Save</FooterLink>
-          <FooterDivider />
-          <FooterLink href="#">Route</FooterLink>
-        </CardFooter>
-      </Card>
-      <Flag>
-        <Stripe color={theme.color.day13Green} />
-        <Stripe color={theme.color.day13White} />
-        <Stripe color={theme.color.day13Red} />
-      </Flag>
+        <Card
+          onClick={() => setIsActive(false)}
+          className={isActive ? 'active' : ''}
+        >
+          <CardHeader fluid={data.day13Vespa.childImageSharp.fluid} />
+          <CardBody>
+            <span>Vespa Scootershop</span>
+            <span>Via Sedile di Porto 70</span>
+            <span>35142 Padova</span>
+          </CardBody>
+          <CardFooter>
+            <FooterLink href="#">Save</FooterLink>
+            <FooterDivider />
+            <FooterLink href="#">Route</FooterLink>
+          </CardFooter>
+        </Card>
+        <Flag>
+          <Stripe color={theme.color.day13Green} />
+          <Stripe color={theme.color.day13White} />
+          <Stripe color={theme.color.day13Red} />
+        </Flag>
+      </Container>
     </Box>
   );
 };

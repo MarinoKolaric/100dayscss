@@ -8,7 +8,7 @@ import { Header, Footer } from '@components';
 const Main = styled.main`
   display: grid;
   grid-gap: 50px;
-  grid-template-columns: repeat(auto-fill, minmax(1fr, 400px));
+  grid-template-columns: repeat(auto-fill, minmax(100%, 400px));
   justify-items: center;
   margin: 50px 12px;
 

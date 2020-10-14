@@ -7,7 +7,6 @@ import { theme } from '@style';
 const Container = styled.div`
   background-color: #222;
   height: 400px;
-  overflow: hidden;
   position: relative;
   width: 100%;
 

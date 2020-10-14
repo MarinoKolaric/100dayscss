@@ -20,7 +20,7 @@ const WrapperAnimation = keyframes`
     border-bottom-width: 2px;
     border-top-width: 2px;
     height: 64px;
-    width: 320px;
+    width: 100%;
   }
 `;
 
@@ -29,7 +29,7 @@ const WrapperAnimationReverse = keyframes`
     border-bottom-width: 2px;
     border-top-width: 2px;
     height: 64px;
-    width: 320px;
+    width: 100%;
   }
 
   40% {
@@ -103,7 +103,7 @@ const Menu = styled.div<IState>`
   height: 100%;
   justify-content: space-around;
   opacity: 0;
-  width: 320px;
+  width: 100%;
 
   &.active {
     animation: ${MenuAnimation} 0.7s ease-in forwards;
