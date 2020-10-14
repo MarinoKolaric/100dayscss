@@ -83,6 +83,11 @@ export const color = {
   day14LeafDarker: '#ba381d',
   day14Tree: '#E8C87E',
   day14Ground: '#B9D6C2',
+
+  day15Background: '#FFDCB5',
+  day15Face: '#F7949A',
+  day15FaceDark: '#CE666D',
+  day15FaceLight: '#FFB7BC',
 };
 
 export const fontSize = {
