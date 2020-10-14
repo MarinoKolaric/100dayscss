@@ -164,6 +164,23 @@ const FooterDivider = styled.span`
   width: 1px;
 `;
 
+const Flag = styled.div`
+  bottom: -20px;
+  display: flex;
+  height: 129px;
+  position: absolute;
+  right: 0;
+  transform: rotate(45deg);
+  transform-origin: left;
+  width: 40px;
+`;
+
+
+const Stripe = styled.div<{ color: string }>`
+  background-color: ${props => props.color};
+  width: 100%;
+`;
+
 export const Day13 = () => {
   const [isActive, setIsActive] = useState<boolean>(false);
 
@@ -205,6 +222,11 @@ export const Day13 = () => {
           <FooterLink href="#">Route</FooterLink>
         </CardFooter>
       </Card>
+      <Flag>
+        <Stripe color={theme.color.day13Green} />
+        <Stripe color={theme.color.day13White} />
+        <Stripe color={theme.color.day13Red} />
+      </Flag>
     </Box>
   );
 };
