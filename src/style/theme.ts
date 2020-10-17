@@ -88,6 +88,11 @@ export const color = {
   day15Face: '#F7949A',
   day15FaceDark: '#CE666D',
   day15FaceLight: '#FFB7BC',
+
+  day16Background: '#34bbe8',
+  day16Road: '#113356',
+  day16Sand: '#05274a',
+  day16Cactus: '#00172f',
 };
 
 export const fontSize = {

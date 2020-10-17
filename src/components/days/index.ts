@@ -13,6 +13,7 @@ import { Day12 } from './day12';
 import { Day13 } from './day13';
 import { Day14 } from './day14';
 import { Day15 } from './day15';
+import { Day16 } from './day16';
 
 export default [
   Day1,
@@ -30,4 +31,5 @@ export default [
   Day13,
   Day14,
   Day15,
+  Day16,
 ];
