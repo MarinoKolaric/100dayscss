@@ -57,18 +57,18 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [`Open Sans\:300,600`, `Montserrat\:500,600`],
+        fonts: [`Open Sans\:300,600`, `Montserrat\:500,600`, `Oswald\:700`],
         display: 'swap',
       },
     },
-    {
-      resolve: 'gatsby-source-graphql',
-      options: {
-        url: 'https://rickandmortyapi.com/graphql/',
-        typeName: 'RickAndMorty',
-        fieldName: 'rickandmorty',
-      },
-    },
+    // {
+    //   resolve: 'gatsby-source-graphql',
+    //   options: {
+    //     url: 'https://rickandmortyapi.com/graphql/',
+    //     typeName: 'RickAndMorty',
+    //     fieldName: 'rickandmorty',
+    //   },
+    // },
 
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
