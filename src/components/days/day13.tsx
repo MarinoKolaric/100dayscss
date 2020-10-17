@@ -148,9 +148,10 @@ const CardFooter = styled.div`
   position: relative;
 `;
 
-const FooterLink = styled.a`
+const FooterLink = styled.div`
   align-items: center;
   color: ${theme.color.day13Blue};
+  cursor: pointer;
   font-size: ${theme.fontSize.xxs};
   padding: 12px 8px;
 `;
@@ -216,9 +217,9 @@ export const Day13 = () => {
             <span>35142 Padova</span>
           </CardBody>
           <CardFooter>
-            <FooterLink href="#">Save</FooterLink>
+            <FooterLink>Save</FooterLink>
             <FooterDivider />
-            <FooterLink href="#">Route</FooterLink>
+            <FooterLink>Route</FooterLink>
           </CardFooter>
         </Card>
         <Flag>
