@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled, { css, keyframes } from 'styled-components';
 import { theme } from '@style';
 import { Box } from '@components';
@@ -253,40 +253,33 @@ const DataTextValue = ({
 }: DataTextValueType) => {
   const [dataValue, setDataValue] = useState(current);
 
-  const upCount = useCallback(
-    (
-      from: number,
-      to: number,
-      setData: React.Dispatch<React.SetStateAction<number>>,
-      isDecimal?: boolean
-    ) => {
-      let current = from;
-      const totalToAdd: number = to - from;
-      let addEachTime: number;
-
-      if (isDecimal) {
-        const num = (totalToAdd / 2000) * 100;
-
-        addEachTime = Number(num.toFixed(2));
-      } else {
-        addEachTime = Math.round((totalToAdd / 2000) * 100);
-      }
-
-      const goUp = setInterval(() => {
-        current += addEachTime;
-        setData(isDecimal ? Number(current.toFixed(2)) : current);
-
-        if (current >= to) {
-          setData(to);
-          clearInterval(goUp);
-        }
-      }, 100);
-    },
-    []
-  );
-
   useEffect(() => {
-    upCount(Math.round(dataValue * 0.5), dataValue, setDataValue, isDecimal);
+    let from = Math.round(dataValue * 0.5);
+    let to = dataValue;
+    const totalToAdd: number = to - from;
+    let addEachTime: number;
+
+    if (isDecimal) {
+      const num = (totalToAdd / 2000) * 100;
+
+      addEachTime = Number(num.toFixed(2));
+    } else {
+      addEachTime = Math.round((totalToAdd / 2000) * 100);
+    }
+
+    const goUp = setInterval(() => {
+      current += addEachTime;
+      setDataValue(isDecimal ? Number(current.toFixed(2)) : current);
+
+      if (current >= to) {
+        setDataValue(to);
+        clearInterval(goUp);
+      }
+    }, 100);
+
+    return () => {
+      clearInterval(goUp);
+    };
   }, []);
 
   return (
