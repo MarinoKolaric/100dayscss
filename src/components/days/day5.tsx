@@ -1,7 +1,7 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import Img, { GatsbyImageProps } from 'gatsby-image';
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 import { Box } from '@components';
 import { theme } from '@style';
 //Date: 9.9.2020
