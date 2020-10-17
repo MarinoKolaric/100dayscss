@@ -23,13 +23,13 @@ const NavigationWrapper = styled.div`
 `;
 
 type NavDayType = {
-  dayColor: string;
+  $dayColor: string;
   direction: 'back' | 'forward';
 };
 
 const NavDay = styled(Link)<NavDayType>`
   align-items: center;
-  background-color: ${props => theme.color[props.dayColor]};
+  background-color: ${props => theme.color[props.$dayColor]};
   color: #fff;
   display: flex;
   font-size: 32rem;
@@ -53,7 +53,7 @@ const NavDay = styled(Link)<NavDayType>`
 
       &::after {
         border-bottom: 20px solid transparent;
-        border-right: 20px solid ${props => theme.color[props.dayColor]};
+        border-right: 20px solid ${props => theme.color[props.$dayColor]};
         border-top: 20px solid transparent;
         bottom: 0;
         content: '';
@@ -70,7 +70,7 @@ const NavDay = styled(Link)<NavDayType>`
 
       &::after {
         border-bottom: 20px solid transparent;
-        border-left: 20px solid ${props => theme.color[props.dayColor]};
+        border-left: 20px solid ${props => theme.color[props.$dayColor]};
         border-top: 20px solid transparent;
         bottom: 0;
         content: '';
@@ -100,14 +100,14 @@ const Day = ({ data }) => {
         <NavigationWrapper>
           <NavDay
             to={`/days/${dayColors[0]}`}
-            dayColor={`${dayColors[0]}Background`}
+            $dayColor={`${dayColors[0]}Background`}
             direction="back"
           >
             Previous
           </NavDay>
           <NavDay
             to={`/days/${dayColors[1]}`}
-            dayColor={`${dayColors[1]}Background`}
+            $dayColor={`${dayColors[1]}Background`}
             direction="forward"
           >
             Next

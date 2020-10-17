@@ -31,7 +31,7 @@ const DayLinkAnimation = keyframes`
   }
 `;
 
-const DayLink = styled(Link)<{ hasFocus: boolean }>`
+const DayLink = styled(Link)<{ $hasFocus: boolean }>`
   align-items: center;
   cursor: pointer;
   display: flex;
@@ -43,9 +43,9 @@ const DayLink = styled(Link)<{ hasFocus: boolean }>`
   z-index: 0;
 
   ${props =>
-    props.hasFocus &&
+    props.$hasFocus &&
     css`
-      animation: ${DayLinkAnimation} .7s ease-in forwards;
+      animation: ${DayLinkAnimation} 0.7s ease-in forwards;
     `}
 `;
 
@@ -71,7 +71,7 @@ export const Box = ({
       <DayLink
         to={`/days/${link}`}
         state={{ componentName }}
-        hasFocus={hasFocus}
+        $hasFocus={hasFocus}
       >
         {title}
         <RiArrowRightSLine />
