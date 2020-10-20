@@ -19,7 +19,7 @@ const Container = styled.div`
 export const Day17 = () => {
   return (
     <Box title="Day 17" link="day17" componentName="Day17">
-      <Container>
+      <Container className="day17">
         <div className="game">
           <div className="bars"></div>
           <div className="cradles">
