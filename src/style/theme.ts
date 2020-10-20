@@ -93,6 +93,8 @@ export const color = {
   day16Road: '#113356',
   day16Sand: '#05274a',
   day16Cactus: '#00172f',
+
+  day17Background: '#ec7158',
 };
 
 export const fontSize = {
