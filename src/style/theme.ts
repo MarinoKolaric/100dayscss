@@ -95,6 +95,8 @@ export const color = {
   day16Cactus: '#00172f',
 
   day17Background: '#ec7158',
+
+  day18Background: '#e8e3ff',
 };
 
 export const fontSize = {

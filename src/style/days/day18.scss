@@ -1,0 +1,177 @@
+$mug-color: #9378b1;
+$mug-shadow: #00000017;
+$chamomile-color: #f4c17f;
+$bg-color: #e8e3ff;
+$vapour-color: rgba(244, 193, 127, 0.5);
+$dark-detail-color: #60557c;
+
+.day18 {
+  .smoke {
+    height: 80px;
+    position: absolute;
+    top: 3%;
+    transform: rotateZ(13deg);
+    width: 60px;
+    z-index: 2;
+
+    &::before {
+      border-bottom: 10px solid transparent;
+      border-radius: 50%;
+      border-right: 10px solid $vapour-color;
+      content: '';
+      height: 50%;
+      position: absolute;
+      right: 59%;
+      top: 9%;
+      transform: translateX(50%);
+      width: 50%;
+    }
+
+    &::after {
+      border-left: 10px solid $vapour-color;
+      border-radius: 50%;
+      border-top: 10px solid transparent;
+      content: '';
+      height: 50%;
+      left: 63%;
+      position: absolute;
+      top: 38%;
+      transform: translateX(-50%);
+      width: 50%;
+    }
+
+    &.smoke-left {
+      left: 33%;
+      top: 6%;
+      transform: rotate(-13deg);
+    }
+
+    &.smoke-right {
+      left: 51%;
+      top: 8%;
+
+      transform: rotateZ(20deg);
+    }
+  }
+
+  .mug {
+    background-color: $mug-color;
+    border-radius: 10% 10% 40% 40%;
+    box-shadow: inset 7px -8px 8px 0 $mug-shadow;
+    height: 180px;
+    position: absolute;
+    width: 140px;
+    z-index: 1;
+
+    &::before {
+      background-color: $chamomile-color;
+      border: 12px solid $mug-color;
+      border-radius: 50%;
+      content: '';
+      height: 62px;
+      position: absolute;
+      top: -18px;
+      width: 100%;
+    }
+
+    &::after {
+      border-left: 2px solid transparent;
+      border-radius: 50% 50% 0 0;
+      border-right: 2px solid $dark-detail-color;
+      border-top: 3px solid $dark-detail-color;
+      content: '';
+      height: 90px;
+      left: 50%;
+      position: absolute;
+      top: 13%;
+      // background-color: rgba(24, 22, 122, 0.3);
+      width: 20px;
+    }
+  }
+
+  .mug-handle {
+    border: 20px solid $mug-color;
+    border-radius: 40%;
+    height: 100px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(50%, -54%);
+    width: 100px;
+  }
+
+  .mug-tea-bag {
+    background-color: $bg-color;
+    border: 1px solid #333;
+    border-radius: 4px;
+    height: 30px;
+    left: 54%;
+    position: absolute;
+    top: 50%;
+    transform: perspective(10px) rotate3d(1, -1, 21, -11deg);
+    width: 30px;
+    z-index: 2;
+  }
+
+  .flower {
+    background: rgba(244, 193, 127, 0.5);
+    height: 100%;
+    position: absolute;
+    transform: scale(0.5);
+    width: 100%;
+  }
+
+  .petal {
+    background: rgba(129, 129, 921, 0.4);
+    background: #fff;
+    border: 1px solid #333;
+    border-radius: 50%;
+    height: 100%;
+    position: absolute;
+    transform: scale(0.7);
+    width: 100%;
+
+    &.petal-top {
+      top: -55%;
+    }
+
+    &.petal-left {
+      left: -50%;
+      top: -20%;
+    }
+
+    &.petal-right {
+      right: -50%;
+      top: -20%;
+    }
+
+    &.petal-bottom-right {
+      bottom: -45%;
+      right: -35%;
+    }
+
+    &.petal-bottom-left {
+      bottom: -45%;
+      left: -35%;
+    }
+  }
+
+  .flower-mid {
+    background-color: $chamomile-color;
+    border: 1px solid #333;
+    border-radius: 50%;
+    height: 100%;
+    position: absolute;
+    transform: scale(0.8);
+    width: 100%;
+  }
+
+  .shadow {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 80%;
+    bottom: 23%;
+    height: 50px;
+    position: absolute;
+    width: 150px;
+  }
+}
