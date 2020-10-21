@@ -5,9 +5,26 @@ $bg-color: #e8e3ff;
 $vapour-color: rgba(244, 193, 127, 0.5);
 $dark-detail-color: #60557c;
 
+@keyframes smoke-animation {
+  0% {
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-20%);
+  }
+}
+
 .day18 {
   .smoke {
+    animation: smoke-animation 4s ease 0.2s infinite;
     height: 80px;
+    opacity: 0;
     position: absolute;
     top: 3%;
     transform: rotateZ(13deg);
