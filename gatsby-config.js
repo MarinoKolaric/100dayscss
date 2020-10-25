@@ -57,7 +57,12 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [`Open Sans\:300,600`, `Montserrat\:500,600`, `Oswald\:700`],
+        fonts: [
+          `Open Sans\:300,600`,
+          `Montserrat\:500,600`,
+          `Oswald\:700`,
+          `Fira Sans Condensed\:400`,
+        ],
         display: 'swap',
       },
     },

@@ -42,8 +42,11 @@ const Container = styled.div`
   color: #fff;
   display: flex;
   flex-direction: column;
+  font-family: 'Fira Sans Condensed';
+  font-weight: ${theme.fontSize.md};
   height: 400px;
   justify-content: center;
+  letter-spacing: 3px;
   width: 100%;
 `;
 
