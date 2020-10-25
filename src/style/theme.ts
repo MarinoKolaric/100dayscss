@@ -97,6 +97,8 @@ export const color = {
   day17Background: '#ec7158',
 
   day18Background: '#e8e3ff',
+
+  day19Background: '#fff',
 };
 
 export const fontSize = {
