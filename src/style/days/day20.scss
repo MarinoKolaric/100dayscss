@@ -133,7 +133,7 @@ $tongue: #f00a;
   }
 
   .tongue {
-    animation: tongue-animation 0.2s ease-in-out infinite alternate;
+    animation: d20-tongue-animation 0.2s ease-in-out infinite alternate;
     background: $tongue;
     border: 2px solid $line;
     border-radius: 50%;
@@ -145,7 +145,7 @@ $tongue: #f00a;
     width: 50px;
   }
 
-  @keyframes tongue-animation {
+  @keyframes d20-tongue-animation {
     from {
       transform: scale(1);
     }

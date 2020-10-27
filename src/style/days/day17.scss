@@ -60,11 +60,11 @@ $tongue: #ff4500;
     width: $radius;
 
     &:first-of-type {
-      animation: first-ball-animation 0.8s ease-out infinite alternate;
+      animation: d17-first-ball-animation 0.8s ease-out infinite alternate;
     }
 
     &:last-of-type {
-      animation: last-ball-animation 0.8s ease-out 0.8s infinite alternate;
+      animation: d17-last-ball-animation 0.8s ease-out 0.8s infinite alternate;
     }
 
     &::before {
@@ -123,7 +123,7 @@ $tongue: #ff4500;
       background: linear-gradient(to bottom, transparent 50%, $line-color 50%);
 
       &::after {
-        animation: tongue-animation 1.6s ease-out 0.8s infinite;
+        animation: d17-tongue-animation 1.6s ease-out 0.8s infinite;
         background: $tongue;
         border-radius: 0 0 50% 50%;
         bottom: -4px;
@@ -183,61 +183,61 @@ $tongue: #ff4500;
       transform-origin: center;
 
       &.rotate-circle-first {
-        animation: circle-animation 0.8s ease-out infinite alternate;
+        animation: d17-circle-animation 0.8s ease-out infinite alternate;
       }
 
       &.rotate-circle-last {
-        animation: circle-animation 0.8s ease-out 0.8s infinite alternate;
+        animation: d17-circle-animation 0.8s ease-out 0.8s infinite alternate;
       }
     }
   }
-}
 
-@keyframes first-ball-animation {
-  0%,
-  50% {
-    transform: rotate(0deg);
+  @keyframes d17-first-ball-animation {
+    0%,
+    50% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(30deg);
+    }
+  }
+  @keyframes d17-last-ball-animation {
+    0%,
+    50% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(-30deg);
+    }
   }
 
-  100% {
-    transform: rotate(30deg);
-  }
-}
-@keyframes last-ball-animation {
-  0%,
-  50% {
-    transform: rotate(0deg);
+  @keyframes d17-tongue-animation {
+    0%,
+    25%,
+    55%,
+    95% {
+      transform: skewX(0deg);
+    }
+
+    40% {
+      transform: skewX(-35deg);
+    }
+
+    60% {
+      transform: skewX(35deg);
+    }
   }
 
-  100% {
-    transform: rotate(-30deg);
-  }
-}
+  @keyframes d17-circle-animation {
+    0%,
+    50% {
+      transform: rotate(186deg);
+    }
 
-@keyframes tongue-animation {
-  0%,
-  25%,
-  55%,
-  95% {
-    transform: skewX(0deg);
-  }
-
-  40% {
-    transform: skewX(-35deg);
-  }
-
-  60% {
-    transform: skewX(35deg);
-  }
-}
-
-@keyframes circle-animation {
-  0%,
-  50% {
-    transform: rotate(186deg);
-  }
-
-  100% {
-    transform: rotate(212deg);
+    100% {
+      transform: rotate(212deg);
+    }
   }
 }
