@@ -1,0 +1,295 @@
+$bg-color: #2c3e50;
+$p1: #3f91c7;
+$p2: #2b82bb;
+$p3: #2578ae;
+$p4: #3289c3;
+$orange: #e67e22;
+$green: #1abc9c;
+
+$num-of-squares: 9;
+$num-of-circles: 9;
+$bezier: cubic-bezier(0.19, 0.69, 0.4, 1);
+$duration: 1.5s;
+
+.day21 {
+
+  $square-coordinates-map: (
+    square1: (
+      x: 25,
+      y: -160,
+      z: 420,
+    ),
+    square2: (
+      x: -120,
+      y: -100,
+      z: 340,
+    ),
+    square3: (
+      x: 130,
+      y: -130,
+      z: 320,
+    ),
+    square4: (
+      x: 135,
+      y: -30,
+      z: 350,
+    ),
+    square5: (
+      x: 50,
+      y: 90,
+      z: 180,
+    ),
+    square6: (
+      x: -120,
+      y: 50,
+      z: 200,
+    ),
+    square7: (
+      x: -80,
+      y: 20,
+      z: 160,
+    ),
+    square8: (
+      x: 80,
+      y: -90,
+      z: 160,
+    ),
+  );
+
+  $circle-coordinates-map: (
+    circle1: (
+      x: -80,
+      y: 105,
+    ),
+    circle2: (
+      x: 15,
+      y: -90,
+    ),
+    circle3: (
+      x: 70,
+      y: -20,
+    ),
+    circle4: (
+      x: 2,
+      y: -115,
+    ),
+    circle5: (
+      x: 42,
+      y: 20,
+    ),
+    circle6: (
+      x: 5,
+      y: 95,
+    ),
+    circle7: (
+      x: -20,
+      y: -80,
+    ),
+    circle8: (
+      x: 100,
+      y: -50,
+    ),
+  );
+
+  .package {
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+  }
+
+  .sides {
+    height: 40%;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 40%;
+    z-index: 2;
+  }
+
+  .side {
+    border-left: 80px solid transparent;
+    border-right: 80px solid transparent;
+    border-top: 80px solid;
+    position: absolute;
+    transform-origin: bottom;
+
+    &.side-top {
+      animation: d21-side-top $duration $bezier infinite alternate;
+      border-top-color: $p1;
+    }
+
+    &.side-right {
+      animation: d21-side-right $duration $bezier infinite alternate;
+      border-top-color: $p2;
+      transform: rotate(90deg);
+    }
+
+    &.side-bottom {
+      animation: d21-side-bottom $duration $bezier infinite alternate;
+      border-top-color: $p3;
+      transform: rotate(180deg);
+    }
+
+    &.side-left {
+      animation: d21-side-left $duration $bezier infinite alternate;
+      border-top-color: $p4;
+      transform: rotate(-90deg);
+    }
+  }
+
+  .shapes {
+    height: 0;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transform-origin: center;
+    width: 0;
+  }
+
+  .square {
+    height: 20px;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform-origin: center;
+    width: 20px;
+
+    &.orange {
+      background-color: $orange;
+    }
+
+    &.green {
+      background-color: $green;
+    }
+
+    @for $i from 1 to $num-of-squares {
+      &#{$i} {
+        animation: d21-square + ($i) $duration $bezier infinite alternate;
+      }
+    }
+  }
+
+  .circle {
+    border-radius: 50%;
+    border-style: solid;
+    height: 20px;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transform-origin: center;
+    width: 20px;
+
+    &.orange {
+      border-color: $orange;
+    }
+
+    &.green {
+      border-color: $green;
+    }
+
+    @for $i from 1 to $num-of-circles {
+      &#{$i} {
+        animation: d21-circle + ($i) $duration $bezier infinite alternate;
+      }
+    }
+  }
+
+  .sm {
+    border-color: inherit;
+    border-width: 3px;
+    height: 12px;
+    width: 12px;
+  }
+
+  .md {
+    border-color: inherit;
+    border-width: 4px;
+    height: 20px;
+    width: 20px;
+  }
+
+  .lg {
+    border-color: inherit;
+    border-width: 6px;
+    height: 30px;
+    width: 30px;
+  }
+
+  @keyframes d21-side-top {
+    0%,
+    20% {
+      transform: translateY(0%);
+    }
+
+    100% {
+      transform: translateY(-200%);
+    }
+  }
+  @keyframes d21-side-right {
+    0%,
+    20% {
+      transform: rotate(90deg) translateY(0%);
+    }
+
+    100% {
+      transform: rotate(90deg) translateY(-200%);
+    }
+  }
+  @keyframes d21-side-bottom {
+    0%,
+    20% {
+      transform: rotate(180deg) translateY(0%);
+    }
+
+    100% {
+      transform: rotate(180deg) translateY(-200%);
+    }
+  }
+  @keyframes d21-side-left {
+    0%,
+    20% {
+      transform: rotate(-90deg) translateY(0%);
+    }
+
+    100% {
+      transform: rotate(-90deg) translateY(-200%);
+    }
+  }
+
+  @each $label, $map in $square-coordinates-map {
+    $x: map-get($map, x);
+    $y: map-get($map, y);
+    $z: map-get($map, z);
+
+    @keyframes d21-#{$label} {
+      from,
+      20% {
+        transform: translate(0) scale(0) rotate(0deg);
+      }
+
+      to {
+        transform: translate(#{$x}px, #{$y}px) scale(1) rotate(#{$z}deg);
+      }
+    }
+  }
+
+  @each $label, $map in $circle-coordinates-map {
+    $x: map-get($map, x);
+    $y: map-get($map, y);
+
+    @keyframes d21-#{$label} {
+      from,
+      20% {
+        transform: translate(0) scale(0);
+      }
+
+      to {
+        transform: translate(#{$x}px, #{$y}px) scale(1);
+      }
+    }
+  }
+}

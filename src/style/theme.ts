@@ -101,6 +101,8 @@ export const color = {
   day19Background: '#fff',
 
   day20Background: '#b9eab0',
+
+  day21Background: '#2c3e50',
 };
 
 export const fontSize = {
