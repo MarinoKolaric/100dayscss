@@ -1,12 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-import { theme } from '@style';
 import '../../style/days/day22.scss';
 import { Box } from '@components';
 
 const Container = styled.div`
   align-items: center;
-  background-color: ${theme.color.day22Background};
+  background-color: #e6b4cc;
   display: flex;
   flex-direction: column;
   height: 400px;
