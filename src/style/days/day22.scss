@@ -1,0 +1,328 @@
+$p: #a02163;
+$o: #c74b56;
+$a: #bf4259;
+$w: #fff;
+$b: #000;
+$bl: #d9cef3;
+$pi: #e6b4cc;
+
+$duration: 5s;
+
+.day22 {
+
+  $map: (
+    dots1: (
+      x: 4%,
+      y: 50%,
+    ),
+    dots2: (
+      x: 20%,
+      y: 20%,
+    ),
+    dots3: (
+      x: 50%,
+      y: 4%,
+    ),
+    dots4: (
+      x: 80%,
+      y: 20%,
+    ),
+    dots5: (
+      x: 96%,
+      y: 50%,
+    ),
+  );
+
+  .stinker {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    transform-origin: top;
+    width: 200px;
+    z-index: 2;
+  }
+
+  .poop {
+    $size: 200px;
+    background: linear-gradient(45deg, $p, $o);
+    height: 60px;
+  }
+
+  .bot {
+    $size: 200px;
+    border-radius: 30px 30px calc(#{$size} / 8) calc(#{$size} / 8);
+    height: calc(#{$size} / 3);
+    width: $size;
+  }
+
+  .mid {
+    $size: 150px;
+    border-radius: 30px 30px calc(#{$size} / 8) calc(#{$size} / 8);
+    height: calc(#{$size} / 3);
+    width: $size;
+  }
+
+  .top {
+    $size: 100px;
+    border-radius: 30px 30px calc(#{$size} / 5) calc(#{$size} / 5);
+    height: calc(#{$size} / 2.2);
+    position: relative;
+    width: $size;
+
+    &::after {
+      $size: 20px;
+      border-bottom: calc(#{$size} + 6px) solid transparent;
+      border-right: calc(#{$size} + 6px) solid $a;
+      border-top: $size solid transparent;
+      content: '';
+      position: absolute;
+      right: 0;
+      top: -20px;
+      transform-origin: top;
+    }
+
+    &::before {
+      background: $w;
+      border-radius: 10px;
+      content: '';
+      height: 14px;
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%) rotate(7deg);
+      width: 7px;
+    }
+  }
+
+  .top,
+  .mid,
+  .bot {
+    animation: d22-grow $duration ease-in-out infinite;
+
+    @keyframes d22-grow {
+      0%,
+      50%,
+      80%,
+      90%,
+      100% {
+        transform: scaleX(1) scaleY(1);
+      }
+
+      60%,
+      70% {
+        transform: scaleX(0.9) scaleY(1.25);
+      }
+
+      75% {
+        transform: scaleX(1.1) scaleY(1);
+      }
+
+      85% {
+        transform: scaleX(1.05) scaleY(1);
+      }
+    }
+  }
+
+  .eyes {
+    $side-offset: 22%;
+    align-items: center;
+    background: #fff;
+    border-radius: 50%;
+    bottom: 30%;
+    display: flex;
+    height: 50px;
+    justify-content: center;
+    left: $side-offset;
+    position: absolute;
+    width: 50px;
+    z-index: 2;
+
+    &::after {
+      animation: d22-blink $duration linear infinite;
+      background-color: #000;
+      border-radius: 50%;
+      content: '';
+      height: 70%;
+      position: absolute;
+      width: 70%;
+    }
+
+    + .eyes {
+      left: unset;
+      right: $side-offset;
+    }
+
+    @keyframes d22-blink {
+      0%,
+      4%,
+      80%,
+      84%,
+      100% {
+        height: 70%;
+      }
+
+      2%,
+      82% {
+        height: 6%;
+      }
+    }
+  }
+
+  .cheek {
+    $side-offset: 12%;
+    background-color: $p;
+    border-radius: 16px;
+    bottom: 18%;
+    height: 24px;
+    left: $side-offset;
+    position: absolute;
+    width: 40px;
+
+    + .cheek {
+      left: unset;
+      right: $side-offset;
+    }
+  }
+
+  .mouth {
+    animation: d22-mouth $duration ease-in-out infinite;
+    // background-color: $b;
+    border: 10px solid transparent;
+    border-bottom: 10px solid $b;
+    border-radius: 50%;
+    bottom: 14%;
+    height: 40px;
+    position: absolute;
+    transform-origin: 50% 0%;
+    width: 50px;
+
+    &::after {
+      background-color: $b;
+      border-radius: 50%;
+      bottom: -4px;
+      content: '';
+      height: 10px;
+      left: -6px;
+      position: absolute;
+      width: 10px;
+    }
+
+    &::before {
+      background-color: $b;
+      border-radius: 50%;
+      bottom: -4px;
+      content: '';
+      height: 10px;
+      position: absolute;
+      right: -6px;
+      width: 10px;
+    }
+
+    @keyframes d22-mouth {
+      0%,
+      50%,
+      74%,
+      100% {
+        border: 10px solid transparent;
+        border-bottom: 10px solid $b;
+        bottom: 14%;
+        height: 40px;
+        width: 50px;
+      }
+
+      60%,
+      70% {
+        // height: 50px;
+        border: 20px solid $b;
+        border-bottom: 20px solid $b;
+        bottom: 8%;
+        width: 0;
+      }
+    }
+  }
+
+  .shadow {
+    $height: 16px;
+    animation: d22-shadow $duration ease-in-out infinite;
+    background: linear-gradient(to left, $p, $o);
+    border-radius: 50%;
+    height: $height;
+    opacity: 0.5;
+    position: relative;
+    top: calc(#{$height} / -2);
+    width: 200px;
+
+    @keyframes d22-shadow {
+      0%,
+      50%,
+      75%,
+      100% {
+        transform: scale(1);
+      }
+
+      60%,
+      70% {
+        transform: scale(0.95, 2.4);
+      }
+    }
+  }
+
+  .dots {
+    background-color: $p;
+    border-radius: 50%;
+    height: 12px;
+    opacity: 0;
+    position: absolute;
+    width: 12px;
+
+    &:nth-child(4) {
+      background-color: $bl;
+    }
+
+    &:nth-child(5) {
+      height: 20px;
+      width: 20px;
+    }
+
+    &:nth-of-type(7) {
+      background-color: $bl;
+    }
+
+    @for $i from 1 to 6 {
+      &#{$i} {
+        animation: d22-dots + ($i) $duration ease-in-out infinite;
+      }
+    }
+  }
+
+  @each $label, $map in $map {
+    $x: map-get($map, x);
+    $y: map-get($map, y);
+
+    @keyframes d22-#{$label} {
+      0%,
+      70% {
+        left: 50%;
+        top: 50%;
+      }
+
+      75% {
+        left: $x;
+        opacity: 1;
+        top: $y;
+      }
+
+      90% {
+        left: $x;
+        opacity: 0;
+        top: $y;
+      }
+
+      100% {
+        opacity: 0;
+      }
+    }
+  }
+}

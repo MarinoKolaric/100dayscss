@@ -103,6 +103,8 @@ export const color = {
   day20Background: '#b9eab0',
 
   day21Background: '#2c3e50',
+
+  day22Background: '#fcf0f8',
 };
 
 export const fontSize = {
