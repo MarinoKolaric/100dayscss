@@ -14,81 +14,78 @@ const Container = styled.div`
 `;
 
 export const Day24 = () => {
-  const slide = useCallback(() => {
+  const slide = () => {
     let isClicked: number;
+    const ContainerEl = document.getElementById('day24') as HTMLElement;
     const OverlayEl = document.getElementById('overlay24') as HTMLElement;
     const SliderEl = document.getElementById('slider') as HTMLElement;
 
-    if (!SliderEl || !OverlayEl) return;
+    if (!SliderEl || !OverlayEl || !ContainerEl) return;
 
-    compareSides(OverlayEl);
+    let w = ContainerEl.offsetWidth;
+    OverlayEl.style.width = w / 2 + 'px';
 
-    function compareSides(overlayEl: HTMLElement) {
-      let w = overlayEl.offsetWidth;
-      // overlayEl.style.width = w / 2 + 'px';
-      overlayEl.style.width = w / 2 + 'px';
+    SliderEl.addEventListener('mousedown', slideReady);
+    SliderEl.addEventListener('touchstart', slideReady);
+    window.addEventListener('mouseup', slideFinish);
+    SliderEl.addEventListener('touchend', slideFinish);
 
-      SliderEl.addEventListener('mousedown', slideReady);
-      SliderEl.addEventListener('touchstart', slideReady);
-      window.addEventListener('mouseup', slideFinish);
-      SliderEl.addEventListener('touchend', slideFinish);
+    function slideReady(e: MouseEvent | TouchEvent): void {
+      e.preventDefault();
+      isClicked = 1;
 
-      function slideReady(e: MouseEvent | TouchEvent): void {
-        e.preventDefault();
-        isClicked = 1;
+      window.addEventListener('mousemove', slideMove);
+      window.addEventListener('touchmove', slideMove);
+    }
 
-        window.addEventListener('mousemove', slideMove);
-        window.addEventListener('touchmove', slideMove);
+    function slideFinish(e: MouseEvent | TouchEvent): void {
+      isClicked = 0;
+    }
+
+    function slideMove(e: MouseEvent | TouchEvent): void {
+      if (!isClicked) return;
+      let pos = getCursorPos(e);
+      if (pos < 0) pos = 0;
+      if (pos > w) pos = w;
+
+      slide(pos);
+    }
+
+    function getCursorPos(e: MouseEvent | TouchEvent): number {
+      let x = 0;
+      let a = OverlayEl.getBoundingClientRect();
+
+      if (e instanceof TouchEvent) {
+        x = e.changedTouches[0].pageX - a.left;
+      }
+      if (e instanceof MouseEvent) {
+        x = e.pageX - a.left;
       }
 
-      function slideFinish(e: MouseEvent | TouchEvent): void {
-        isClicked = 0;
-      }
+      x = x - window.pageXOffset;
 
-      function slideMove(e: MouseEvent | TouchEvent): void {
-        if (!isClicked) return;
-        let pos = getCursorPos(e);
-        if (pos < 0) pos = 0;
-        if (pos > w) pos = w;
+      return x;
+    }
 
-        slide(pos);
-      }
+    function slide(x: number): void {
+      OverlayEl.style.width = x + 'px';
 
-      function getCursorPos(e: MouseEvent | TouchEvent): number {
-        let x = 0;
-        let a = overlayEl.getBoundingClientRect();
-
-        if (e instanceof TouchEvent) {
-          x = e.changedTouches[0].pageX - a.left;
-        }
-        if (e instanceof MouseEvent) {
-          x = e.pageX - a.left;
-        }
-
-        x = x - window.pageXOffset;
-
-        return x;
-      }
-
-      function slide(x: number): void {
-        overlayEl.style.width = x + 'px';
-
-        if (overlayEl.offsetWidth < SliderEl.offsetWidth) {
-          SliderEl.style.left = SliderEl.offsetWidth / 2 + 'px';
-        } else {
-          SliderEl.style.left =
-            overlayEl.offsetWidth - SliderEl.offsetWidth / 2 + 'px';
-        }
+      if (OverlayEl.offsetWidth < SliderEl.offsetWidth) {
+        SliderEl.style.left = SliderEl.offsetWidth / 2 + 'px';
+      } else {
+        SliderEl.style.left =
+          OverlayEl.offsetWidth - SliderEl.offsetWidth / 2 + 'px';
       }
     }
-  }, []);
+  };
 
   useEffect(() => {
     slide();
   }, [slide]);
+
   return (
     <Box title="Day 24" link="day24" componentName="Day24">
-      <Container className="day24">
+      <Container className="day24" id="day24">
         <div className="wrapper">
           <div className="car car-first">
             <div className="new">
