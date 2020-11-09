@@ -14,7 +14,7 @@ const Container = styled.div`
 `;
 
 export const Day24 = () => {
-  const slide = () => {
+  const slide = useCallback(() => {
     let isClicked: number;
     const ContainerEl = document.getElementById('day24') as HTMLElement;
     const OverlayEl = document.getElementById('overlay24') as HTMLElement;
@@ -77,7 +77,7 @@ export const Day24 = () => {
           OverlayEl.offsetWidth - SliderEl.offsetWidth / 2 + 'px';
       }
     }
-  };
+  }, []);
 
   useEffect(() => {
     slide();
