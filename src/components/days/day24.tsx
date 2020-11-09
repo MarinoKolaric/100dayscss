@@ -16,13 +16,16 @@ const Container = styled.div`
 export const Day24 = () => {
   const slide = useCallback(() => {
     let isClicked: number;
-    const OverlayEl = document.getElementById('overlay') as HTMLElement;
+    const OverlayEl = document.getElementById('overlay24') as HTMLElement;
     const SliderEl = document.getElementById('slider') as HTMLElement;
+
+    if (!SliderEl || !OverlayEl) return;
 
     compareSides(OverlayEl);
 
     function compareSides(overlayEl: HTMLElement) {
       let w = overlayEl.offsetWidth;
+      // overlayEl.style.width = w / 2 + 'px';
       overlayEl.style.width = w / 2 + 'px';
 
       SliderEl.addEventListener('mousedown', slideReady);
@@ -133,7 +136,7 @@ export const Day24 = () => {
           </div>
         </div>
         <div className="slider" id="slider"></div>
-        <div className="wrapper overlay" id="overlay">
+        <div className="wrapper overlay24" id="overlay24">
           <div className="car ">
             <div className="old">
               <div className="old-bot">
