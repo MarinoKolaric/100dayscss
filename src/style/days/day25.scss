@@ -1,0 +1,365 @@
+// Variables
+
+$bg-color: #143c6b;
+$head-cow: #fcfcfc;
+$head-deer: #d27b4c;
+$snout-cow: #f790b1;
+$snout-deer: #d2a98d;
+$border: #3a292c;
+$horns-deer: #ffb21e;
+$nose-deer: #ac2925;
+$dot-cow: #898593;
+
+$animation-timing: linear;
+
+.day25 {
+  .wrapper {
+    height: 220px;
+    position: relative;
+    width: 200px;
+  }
+
+  .head {
+    animation: head-bg 2s $animation-timing infinite alternate;
+    background: $head-cow;
+    border: 12px solid $border;
+    border-radius: 50%;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.3);
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+  }
+
+  .dot {
+    animation: dot 2s $animation-timing infinite alternate;
+    background-color: $dot-cow;
+    border-radius: 50%;
+    height: 88px;
+    position: absolute;
+    right: -10%;
+    top: 12%;
+    width: 88px;
+  }
+
+  .eye {
+    background: $border;
+    border-radius: 50%;
+    height: 24px;
+    left: 16%;
+    position: absolute;
+    top: 40%;
+    width: 24px;
+
+    + .eye {
+      left: unset;
+      right: 16%;
+    }
+  }
+
+  .ear {
+    animation: ear-l 2s $animation-timing infinite alternate;
+    background: $head-cow;
+    border: 12px solid $border;
+    border-radius: 100% / 151% 169% 29% 150%;
+    height: 40%;
+    left: -27%;
+    position: absolute;
+    top: -3%;
+    transform: rotate(15deg);
+
+    width: 100%;
+
+    &::after {
+      animation: ear-after-bg 2s $animation-timing infinite alternate;
+      background-color: $snout-cow;
+      border-radius: 10px;
+      content: '';
+      height: 12px;
+      position: absolute;
+      right: 20%;
+      top: 20%;
+      width: 60%;
+    }
+
+    + .ear {
+      animation: ear-r 2s $animation-timing infinite alternate;
+      left: unset;
+      right: -12%;
+      transform: scaleX(-1) rotate(15deg);
+    }
+  }
+
+  .snout {
+    animation: snout-bg 2s $animation-timing infinite alternate;
+    background-color: $snout-cow;
+    border: 12px solid $border;
+    border-radius: 50%;
+    bottom: 0;
+    height: 46%;
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+    width: 60%;
+  }
+
+  .nose {
+    animation: nose-l 2s $animation-timing infinite alternate;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 100% / 50% 50% 200% 200%;
+    height: 12px;
+    left: 25%;
+    position: absolute;
+    top: 20%;
+    width: 14px;
+
+    + .nose {
+      animation: nose-r 2s $animation-timing infinite alternate;
+      left: unset;
+      right: 25%;
+    }
+  }
+
+  .red-nose {
+    animation: red-nose 2s $animation-timing infinite alternate;
+    background-color: $nose-deer;
+    border-radius: 100% / 100% 100% 200% 200%;
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.6);
+    height: 30px;
+    left: 50%;
+    position: absolute;
+    top: 10%;
+    transform: translateX(-50%);
+    width: 35px;
+
+    &::after {
+      background-color: rgba(255, 255, 255, 0.3);
+      border-radius: 20px;
+      content: '';
+      height: 30%;
+      left: 50%;
+      position: absolute;
+      top: 16%;
+      transform: translateX(-50%);
+      width: 50%;
+    }
+  }
+
+  .mouth {
+    border-bottom: 10px solid $border;
+    border-left: 10px solid transparent;
+    border-radius: 50%;
+    border-right: 10px solid transparent;
+    bottom: 6%;
+    height: 40px;
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+    width: 60px;
+
+    &::before {
+      background-color: $border;
+      border-radius: 50%;
+      bottom: -4px;
+      content: '';
+      height: 10px;
+      left: -5px;
+      position: absolute;
+      width: 10px;
+    }
+
+    &::after {
+      background-color: $border;
+      border-radius: 50%;
+      bottom: -4px;
+      content: '';
+      height: 10px;
+      position: absolute;
+      right: -5px;
+      width: 10px;
+    }
+  }
+
+  .horn {
+    animation: horns 2s $animation-timing infinite alternate;
+    background-color: $horns-deer;
+    border-radius: 20px;
+    height: 80px;
+    left: 33%;
+    position: absolute;
+    top: -20%;
+    width: 10%;
+
+    &::after {
+      background-color: $horns-deer;
+      border-radius: 20px;
+      content: '';
+      height: 40%;
+      position: absolute;
+      top: -5%;
+      transform: rotate(-65deg);
+      transform-origin: bottom center;
+      width: 65%;
+    }
+
+    + .horn {
+      left: unset;
+      right: 33%;
+      transform: scale(-1, 1);
+    }
+  }
+
+  @keyframes head-bg {
+    0%,
+    25% {
+      background-color: $head-cow;
+    }
+
+    75%,
+    100% {
+      background-color: $head-deer;
+    }
+  }
+  @keyframes ear-l {
+    0%,
+    25% {
+      background-color: $head-cow;
+      border-radius: 100% / 151% 169% 29% 150%;
+      left: -27%;
+      width: 100%;
+    }
+
+    75%,
+    100% {
+      background-color: $head-deer;
+      border-radius: 100% / 40% 200% 0 200%;
+      left: -12%;
+      width: 50%;
+    }
+  }
+  @keyframes ear-r {
+    0%,
+    25% {
+      background-color: $head-cow;
+      border-radius: 100% / 151% 169% 29% 150%;
+      right: -27%;
+      width: 100%;
+    }
+
+    75%,
+    100% {
+      background-color: $head-deer;
+      border-radius: 100% / 40% 200% 0 200%;
+      right: -12%;
+      width: 50%;
+    }
+  }
+
+  @keyframes snout-bg {
+    0%,
+    25% {
+      background-color: $snout-cow;
+    }
+
+    75%,
+    100% {
+      background-color: $snout-deer;
+    }
+  }
+
+  @keyframes dot {
+    0%,
+    25% {
+      right: -10%;
+      top: 12%;
+    }
+
+    75%,
+    100% {
+      right: -60%;
+      top: 0;
+    }
+  }
+
+  @keyframes ear-after-bg {
+    0%,
+    25% {
+      background-color: $snout-cow;
+      height: 12px;
+      right: 20%;
+    }
+
+    75%,
+    100% {
+      background-color: $snout-deer;
+      height: 16px;
+      right: 10%;
+    }
+  }
+
+  @keyframes horns {
+    0%,
+    25% {
+      top: 40%;
+    }
+
+    67% {
+      top: -23%;
+    }
+
+    75%,
+    100% {
+      top: -20%;
+    }
+  }
+
+  @keyframes nose-l {
+    0%,
+    25% {
+      left: 25%;
+    }
+
+    70% {
+      opacity: 1;
+    }
+
+    75%,
+    100% {
+      left: 45%;
+      opacity: 0;
+    }
+  }
+
+  @keyframes nose-r {
+    0%,
+    25% {
+      right: 25%;
+    }
+
+    70% {
+      opacity: 1;
+    }
+
+    75%,
+    100% {
+      opacity: 0;
+      right: 45%;
+    }
+  }
+
+  @keyframes red-nose {
+    0%,
+    55% {
+      transform: translateX(-50%) scale(0);
+    }
+
+    70% {
+      transform: translateX(-50%) scale(1.2);
+    }
+
+    75%,
+    100% {
+      transform: translateX(-50%) scale(1);
+    }
+  }
+}
